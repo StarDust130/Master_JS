@@ -1,31 +1,20 @@
-const calcTip = function (bill) {
-  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-};
+function example() {
+  var x = 10;
+  let y = 20;
+  const z = 30;
 
-/* Write your code below. Good luck! 🙂 */
-
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
-
-const tips = [];
-const totals = [];
-
-for (let i = 0; i < bills.length; i++) {
-  tips.push(calcTip(bills[i]));
-  totals.push(tips[i] + bills[i]);
-}
-
-const calcAverage = (arr) => {
-  let sum = 0;
-
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
+  if (true) {
+    var x = 40; // Re-declares and updates 'x' in the same function scope
+    let y = 50; // 'y' is block-scoped, so this 'y' is separate from the outer 'y'
+    const z = 60; // 'z' is block-scoped, so this 'z' is separate from the outer 'z'
+    console.log(x); // 40
+    console.log(y); // 50
+    console.log(z); // 60
   }
 
-  return sum / arr.length;
-};
+  console.log(x); // 40 (because 'var' is function-scoped and was re-declared in the if block)
+  console.log(y); // 20 (the outer 'y' is unchanged)
+  console.log(z); // 30 (the outer 'z' is unchanged)
+}
 
-console.log(calcAverage(totals));
-
-console.log();
-
-// FIXME: 
+example();
