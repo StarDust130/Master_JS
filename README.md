@@ -24,25 +24,25 @@
  23. [TypeScript](#typescript)
  24. [ES6+](#es6+)
 
-## Introduction
+## 1. Introduction
 - JavaScript is a high-level, interpreted programming language.
 - It is a programming language that is characterized as dynamic, weakly typed, prototype-based and multi-paradigm.
 - JavaScript is a language that is used to create interactive effects within web browsers.
 
-## Variables
+## 2. Variables
 - Variables are containers for storing data values.
 - In JavaScript, variables are declared with the var, let, or const keyword.
 - The var keyword is used to declare a variable that is scoped to the function in which it is declared.
 - The let keyword is used to declare a variable that is scoped to the block in which it is declared.
 - The const keyword is used to declare a variable that is scoped to the block in which it is declared and cannot be reassigned.
 
-## Data Types
+## 3. Data Types
 - JavaScript has six primitive data types: string, number, boolean, null, undefined, and symbol.
 - JavaScript has one complex data type: object.
 - JavaScript has two additional data types: function and array.
 
 
-## Operators
+## 4. Operators
 - JavaScript has several types of operators: arithmetic, assignment, comparison, logical, bitwise, and more.
 - Arithmetic operators are used to perform arithmetic operations on numbers.
 - Assignment operators are used to assign values to variables.
