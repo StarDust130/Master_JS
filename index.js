@@ -1,15 +1,8 @@
 
-const apple = () => {
-  let x = 5
-
-  if(false){
-    x =10
-    
-  }
-
-  console.log(x);
-  
-} 
 
 
-apple()
+// console.log(cat);
+
+// let cat =5
+
+
