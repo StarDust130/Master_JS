@@ -1,8 +1,9 @@
+"use strict";
 
+let apple = 10;
+const boy = apple;
 
+apple = 12;
 
-// console.log(cat);
-
-// let cat =5
-
-
+console.log(apple);
+console.log(boy);
