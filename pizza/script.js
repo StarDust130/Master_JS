@@ -36,9 +36,10 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`${ing1} is ${ing2} is better than ${ing3} `);
   },
+  orderPizza: function (mainIng, ...otherIng) {
+    console.log(`${mainIng} is better than ${otherIng} `);
+  },
 };
-
-restaurant.orderDelivery({ starterIndex: 1, mainIndex: 2, otherIndex: 3 });
 
 //! Array
 // Receive 2 return value from a function.
@@ -95,3 +96,12 @@ restaurant.orderDelivery({ starterIndex: 1, mainIndex: 2, otherIndex: 3 });
 
 // restaurant.orderPasta(...ingredients);
 
+// REST operator
+
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+
+const [p, , r, ...o] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(p, r, o);
+
+
+restaurant.orderPizza("cake")
