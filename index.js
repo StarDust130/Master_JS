@@ -1,9 +1,10 @@
 "use strict";
 
-let apple = 10;
-const boy = apple;
+const arr = [1, 2, 3, 4 ,5];
 
-apple = 12;
+const [a, b, c] = arr;
 
-console.log(apple);
-console.log(boy);
+console.log(a, b, c);
+
+console.log(arr);
+

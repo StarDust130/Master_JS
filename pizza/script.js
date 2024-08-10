@@ -11,6 +11,9 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 
   openingHours: {
     thu: {
@@ -27,3 +30,20 @@ const restaurant = {
     },
   },
 };
+
+// Receive 2 return value from a function.
+const [starter, main] = restaurant.order(2, 0);
+
+console.log(starter, main); // Garlic Bread Pizza
+
+// Nested Destructuring Array
+const nested = [2, 4, [5, 6, [7]]];
+
+const [val1, , [val2, , [val3]]] = nested;
+
+console.log(val1, val2, val3); // 2 5 7
+
+// Default Array
+
+const [p = 1, q = 3, r = 5] = [8, 9];
+console.log(p, q, r); // 8 9 5
