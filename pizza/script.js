@@ -33,6 +33,9 @@ const restaurant = {
   orderDelivery: function ({ ...obj }) {
     console.log(`${obj.starterIndex}`);
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`${ing1} is ${ing2} is better than ${ing3} `);
+  },
 };
 
 restaurant.orderDelivery({ starterIndex: 1, mainIndex: 2, otherIndex: 3 });
@@ -83,9 +86,12 @@ restaurant.orderDelivery({ starterIndex: 1, mainIndex: 2, otherIndex: 3 });
 // } = openingHours;
 // console.log(open, close);
 
-const arr = 'babu';
-const newArr = [...arr];
+// const arr = 'babu';
+// const newArr = [...arr];
 
-console.log(...arr);
+// console.log(...arr);
 
+// const ingredients = ["rice" , "roti" , "cake"]
+
+// restaurant.orderPasta(...ingredients);
 
