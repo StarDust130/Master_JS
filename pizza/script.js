@@ -55,30 +55,37 @@ restaurant.orderDelivery({ starterIndex: 1, mainIndex: 2, otherIndex: 3 });
 // const [p = 1, q = 3, r = 5] = [8, 9];
 // console.log(p, q, r); // 8 9 5
 
-//! Object
+// //! Object
 
-const { name: naam, openingHours, categories, cat = 'bat' } = restaurant;
+// const { name: naam, openingHours, categories, cat = 'bat' } = restaurant;
 
-console.log(naam, openingHours, categories, cat);
+// console.log(naam, openingHours, categories, cat);
 
-// Mutating Variable
+// // Mutating Variable
 
-let a = 111;
-let b = 222;
-const obj = {
-  a: 1,
-  b: 2,
-  c: 3,
-  d: 4,
-};
+// let a = 111;
+// let b = 222;
+// const obj = {
+//   a: 1,
+//   b: 2,
+//   c: 3,
+//   d: 4,
+// };
 
-({ a, b } = obj);
+// ({ a, b } = obj);
 
-console.log(a, b);
+// console.log(a, b);
 
-// Nested Objects
+// // Nested Objects
 
-const {
-  fri: { open, close },
-} = openingHours;
-console.log(open, close);
+// const {
+//   fri: { open, close },
+// } = openingHours;
+// console.log(open, close);
+
+const arr = 'babu';
+const newArr = [...arr];
+
+console.log(...arr);
+
+
