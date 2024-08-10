@@ -29,21 +29,56 @@ const restaurant = {
       close: 24,
     },
   },
+
+  orderDelivery: function ({ ...obj }) {
+    console.log(`${obj.starterIndex}`);
+  },
 };
 
+restaurant.orderDelivery({ starterIndex: 1, mainIndex: 2, otherIndex: 3 });
+
+//! Array
 // Receive 2 return value from a function.
-const [starter, main] = restaurant.order(2, 0);
+// const [starter, main] = restaurant.order(2, 0);
 
-console.log(starter, main); // Garlic Bread Pizza
+// console.log(starter, main); // Garlic Bread Pizza
 
-// Nested Destructuring Array
-const nested = [2, 4, [5, 6, [7]]];
+// // Nested Destructuring Array
+// const nested = [2, 4, [5, 6, [7]]];
 
-const [val1, , [val2, , [val3]]] = nested;
+// const [val1, , [val2, , [val3]]] = nested;
 
-console.log(val1, val2, val3); // 2 5 7
+// console.log(val1, val2, val3); // 2 5 7
 
-// Default Array
+// // Default Array
 
-const [p = 1, q = 3, r = 5] = [8, 9];
-console.log(p, q, r); // 8 9 5
+// const [p = 1, q = 3, r = 5] = [8, 9];
+// console.log(p, q, r); // 8 9 5
+
+//! Object
+
+const { name: naam, openingHours, categories, cat = 'bat' } = restaurant;
+
+console.log(naam, openingHours, categories, cat);
+
+// Mutating Variable
+
+let a = 111;
+let b = 222;
+const obj = {
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 4,
+};
+
+({ a, b } = obj);
+
+console.log(a, b);
+
+// Nested Objects
+
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
