@@ -100,8 +100,11 @@ const restaurant = {
 
 // const [a, b, ...others] = [1, 2, 3, 4, 5];
 
-const [p, , r, ...o] = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(p, r, o);
+// const [p, , r, ...o] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(p, r, o);
 
 
-restaurant.orderPizza("cake")
+restaurant.orderPizza("cake" , ["bake" , "jake"])
+
+
+//! Short 
