@@ -60,3 +60,37 @@ const game = {
     team2: 6.5,
   },
 };
+
+// 1) Solution
+
+// 1. Create one player array for each team
+const [players1, players2] = game.players;
+
+// 2. Goalkeeper and field players for Bayern Munich
+const [gk, ...fieldPlayers] = players1;
+console.log('fieldPlayers ' + fieldPlayers);
+
+// 3. Create an array 'allPlayers' containing all players of both teams
+const allPlayers = [...players1, ...players2];
+
+// 4. Create a new array 'players1Final' containing all original players plus substitutes
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+
+// 5. Create one variable for each odd
+const { team1, x: draw, team2 } = game.odds;
+
+// 6. Function to print goals and the number of goals scored
+const printGoals = function (...players) {
+  console.log(`${players.length} goals were scored`);
+  players.map(player => console.log('->' + player));
+};
+
+// Test the function with 'Davies', 'Muller', 'Lewandowski', 'Kimmich'
+printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+
+// Test the function with players from game.scored
+printGoals(...game.scored);
+
+// 7. Print which team is more likely to win
+team1 < team2 && console.log('Team 1 is more likely to win');
+team2 < team1 && console.log('Team 2 is more likely to win');
