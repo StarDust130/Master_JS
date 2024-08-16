@@ -103,5 +103,4 @@ team2 < team1 && console.log('Team 2 is more likely to win');
 
 // const Set = new Set([]) -> to create a set
 
-
 console.log(new Set("chandrashekhar"));
