@@ -94,3 +94,6 @@ printGoals(...game.scored);
 // 7. Print which team is more likely to win
 team1 < team2 && console.log('Team 1 is more likely to win');
 team2 < team1 && console.log('Team 2 is more likely to win');
+
+// Object Values , key and entires
+
