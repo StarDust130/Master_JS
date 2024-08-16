@@ -97,3 +97,11 @@ team2 < team1 && console.log('Team 2 is more likely to win');
 
 // Object Values , key and entires
 
+// Sets and Map introduce in ES6 in JS
+
+// Sets are dosen't has repert value other thing same as array
+
+// const Set = new Set([]) -> to create a set
+
+
+console.log(new Set("chandrashekhar"));
