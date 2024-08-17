@@ -107,16 +107,21 @@ GOOD LUCK 😀
 
 // String
 
-const checkMiddleSeat = function (seat) {
-  // If last value is B or E, it's a middle seat
-  const lastChar = seat.slice(-1);
-  if (lastChar === 'B' || lastChar === 'E') {
-    console.log(`${seat} is  a Middle seat`);
-  } else {
-    console.log(`${seat} is not a Middle seat`);
-  }
-};
+// const checkMiddleSeat = function (seat) {
+//   // If last value is B or E, it's a middle seat
+//   const lastChar = seat.slice(-1);
+//   if (lastChar === 'B' || lastChar === 'E') {
+//     console.log(`${seat} is  a Middle seat`);
+//   } else {
+//     console.log(`${seat} is not a Middle seat`);
+//   }
+// };
 
-checkMiddleSeat('145B'); // It's a middle seat
-checkMiddleSeat('145E'); // It's a middle seat
-checkMiddleSeat('145A'); // No output
+// checkMiddleSeat('145B'); // It's a middle seat
+// checkMiddleSeat('145E'); // It's a middle seat
+// checkMiddleSeat('145A'); // No output
+
+
+const babu = "BABU"
+
+console.log(babu.capitalize());
