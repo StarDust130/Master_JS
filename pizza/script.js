@@ -20,89 +20,103 @@ TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Th
 GOOD LUCK 😀
 */
 
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
+
+// // 1) Solution
+
+// // 1. Create one player array for each team
+// const [players1, players2] = game.players;
+
+// // 2. Goalkeeper and field players for Bayern Munich
+// const [gk, ...fieldPlayers] = players1;
+// console.log('fieldPlayers ' + fieldPlayers);
+
+// // 3. Create an array 'allPlayers' containing all players of both teams
+// const allPlayers = [...players1, ...players2];
+
+// // 4. Create a new array 'players1Final' containing all original players plus substitutes
+// const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+
+// // 5. Create one variable for each odd
+// const { team1, x: draw, team2 } = game.odds;
+
+// // 6. Function to print goals and the number of goals scored
+// const printGoals = function (...players) {
+//   console.log(`${players.length} goals were scored`);
+//   players.map(player => console.log('->' + player));
+// };
+
+// // Test the function with 'Davies', 'Muller', 'Lewandowski', 'Kimmich'
+// printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+
+// // Test the function with players from game.scored
+// printGoals(...game.scored);
+
+// // 7. Print which team is more likely to win
+// team1 < team2 && console.log('Team 1 is more likely to win');
+// team2 < team1 && console.log('Team 2 is more likely to win');
+
+// // Object Values , key and entires
+
+// // Sets and Map introduce in ES6 in JS
+
+// // Sets are dosen't has repert value other thing same as array
+
+// // const Set = new Set([]) -> to create a set
+
+// console.log(new Set('chandrashekhar'));
+
+// String
+
+const checkMiddleSeat = function (seat) {
+  // If last value is B or E, it's a middle seat
+  const lastChar = seat.slice(-1);
+  if (lastChar === 'B' || lastChar === 'E') {
+    console.log(`${seat} is  a Middle seat`);
+  } else {
+    console.log(`${seat} is not a Middle seat`);
+  }
 };
 
-// 1) Solution
-
-// 1. Create one player array for each team
-const [players1, players2] = game.players;
-
-// 2. Goalkeeper and field players for Bayern Munich
-const [gk, ...fieldPlayers] = players1;
-console.log('fieldPlayers ' + fieldPlayers);
-
-// 3. Create an array 'allPlayers' containing all players of both teams
-const allPlayers = [...players1, ...players2];
-
-// 4. Create a new array 'players1Final' containing all original players plus substitutes
-const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
-
-// 5. Create one variable for each odd
-const { team1, x: draw, team2 } = game.odds;
-
-// 6. Function to print goals and the number of goals scored
-const printGoals = function (...players) {
-  console.log(`${players.length} goals were scored`);
-  players.map(player => console.log('->' + player));
-};
-
-// Test the function with 'Davies', 'Muller', 'Lewandowski', 'Kimmich'
-printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
-
-// Test the function with players from game.scored
-printGoals(...game.scored);
-
-// 7. Print which team is more likely to win
-team1 < team2 && console.log('Team 1 is more likely to win');
-team2 < team1 && console.log('Team 2 is more likely to win');
-
-// Object Values , key and entires
-
-// Sets and Map introduce in ES6 in JS
-
-// Sets are dosen't has repert value other thing same as array
-
-// const Set = new Set([]) -> to create a set
-
-console.log(new Set("chandrashekhar"));
-
-
+checkMiddleSeat('145B'); // It's a middle seat
+checkMiddleSeat('145E'); // It's a middle seat
+checkMiddleSeat('145A'); // No output
