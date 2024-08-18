@@ -121,7 +121,15 @@ GOOD LUCK 😀
 // checkMiddleSeat('145E'); // It's a middle seat
 // checkMiddleSeat('145A'); // No output
 
+const capitalizeName = name =>
+  console.log(
+    name
+      .toLowerCase()
+      .split(' ')
+      .map(n => n.replace(n[0], n[0].toUpperCase()))
+      .join(' ')
+  );
 
-const babu = "BABU"
+capitalizeName('babu is beSt');
+capitalizeName('i can do anything');
 
-console.log(babu.capitalize());
