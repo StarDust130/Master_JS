@@ -121,6 +121,7 @@ GOOD LUCK 😀
 // checkMiddleSeat('145E'); // It's a middle seat
 // checkMiddleSeat('145A'); // No output
 
+
 const capitalizeName = name =>
   console.log(
     name
