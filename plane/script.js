@@ -2,9 +2,9 @@
 
 // Function in JS
 
-const flight = 'AB2123';
+const flight = 'AB2123'; //! Not Change in Fn
 const stardust = {
-  name: 'Chandrashekhar',
+  name: 'Chandrashekhar', //! Change in Fn
   passport: 12356235,
 };
 
@@ -14,7 +14,10 @@ const checkIn = function (flightNum, passenger) {
 
   if (passenger.passport === 12356235) {
     console.log('Have a Great Trip ✈️ 😊');
-  }
+  } else console.log('Wrong Passport ☠️');
 };
 
 checkIn(flight, stardust);
+
+console.log(flight);
+console.log(stardust);
