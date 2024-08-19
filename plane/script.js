@@ -125,6 +125,35 @@
 
 //!  Immediately Invoked Function Expressions (IIFE)
 
-(() => {
-  console.log('Run Once Done! 🤑');
-})();
+// (() => {
+//   console.log('Run Once Done! 🤑');
+// })();
+
+//!  Closures
+
+// const secureBooking = function () {
+//   let passengerCount = 0;
+
+//   return function () {
+//     passengerCount++;
+//     console.log(`${passengerCount} passengers`);
+//   };
+// };
+
+// const booker = secureBooking();
+
+// booker();
+
+//! Close Look at Closures with Example.
+
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+g()
+f()
