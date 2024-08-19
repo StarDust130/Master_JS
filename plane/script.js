@@ -114,5 +114,11 @@ const book = airIndia.book;
 
 //! Blind Method -> Help to manual set this keyword to any function
 
-const bookedAirIndia = book.bind(airIndia);
-bookedAirIndia(5224, 'Goti');
+// const bookedAirIndia = book.bind(airIndia);
+// bookedAirIndia(5224, 'Goti');
+
+const addTax = rate => value => value + value * rate;
+
+const addVat = addTax(5);
+
+console.log(addVat(10));
