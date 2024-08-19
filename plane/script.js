@@ -101,13 +101,18 @@ const vistara = {
 
 const book = airIndia.book;
 
-//! .call method call book() Fn. and 1st arrgument is this keyword value
-book.call(vistara, 19, 'Munna Thanos');
+// //! .call method call book() Fn. and 1st arrgument is this keyword value
+// book.call(vistara, 19, 'Munna Thanos');
 
-//! Apply method same as .call but it not recieve arrgument but a array. ### NOT USE ANYMORE ###
+// //! Apply method same as .call but it not recieve arrgument but a array. ### NOT USE ANYMORE ###
 
-const flightData = [856, 'Jay shetty '];
-book.apply(vistara, flightData);
+// const flightData = [856, 'Jay shetty '];
+// book.apply(vistara, flightData);
 
-//! MODERN ES6+ Way to do this.
-book.call(vistara, ...flightData);
+// //! MODERN ES6+ Way to do this.
+// book.call(vistara, ...flightData);
+
+//! Blind Method -> Help to manual set this keyword to any function
+
+const bookedAirIndia = book.bind(airIndia);
+bookedAirIndia(5224, 'Goti');
