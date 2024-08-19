@@ -19,8 +19,8 @@ const checkIn = function (flightNum, passenger) {
 
 // checkIn(flight, stardust);
 
-console.log(flight); // Same beacuse Primative are only create copy
-console.log(stardust); // Changed beacuse Objects store refernce to data
+// console.log(flight); // Same beacuse Primative are only create copy
+// console.log(stardust); // Changed beacuse Objects store refernce to data
 
 // Example:
 // const flightNum = flight;
@@ -33,5 +33,24 @@ const newPAssport = function (person) {
   console.log(`New Passport: ${person.passport}`);
 };
 
-newPAssport(stardust);
-checkIn(flight, stardust);
+// newPAssport(stardust);
+// checkIn(flight, stardust);
+
+//! First Class and Higher-Order Functions.
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+// Higher-Order-Functions 🙂
+const transformer = function (str, fn) {
+  console.log(`Transformer string: ${fn(str)}`);
+  console.log(`Transformer by: ${fn.name} Function`);
+};
+
+transformer('JavaScript is Best', upperFirstWord);
