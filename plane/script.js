@@ -19,5 +19,9 @@ const checkIn = function (flightNum, passenger) {
 
 checkIn(flight, stardust);
 
-console.log(flight);
-console.log(stardust);
+console.log(flight); // Same beacuse Primative are only create copy
+console.log(stardust); // Changed beacuse Objects store refernce to data
+
+// Exaample:
+// const flightNum = flight;
+// const passenger = joans;
