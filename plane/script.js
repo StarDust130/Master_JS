@@ -117,8 +117,8 @@ const book = airIndia.book;
 // const bookedAirIndia = book.bind(airIndia);
 // bookedAirIndia(5224, 'Goti');
 
-const addTax = rate => value => value + value * rate;
+const addTax = rate => value => value + value + rate;
 
-const addVat = addTax(5);
+const addVat = addTax(0.23);
 
 console.log(addVat(10));
