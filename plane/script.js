@@ -22,6 +22,8 @@ checkIn(flight, stardust);
 console.log(flight); // Same beacuse Primative are only create copy
 console.log(stardust); // Changed beacuse Objects store refernce to data
 
-// Exaample:
+// Example:
 // const flightNum = flight;
 // const passenger = joans;
+
+//! Summary: Passing a primative type as arguments is just crete copy that of that variable. But in Object they pass acutal refernce so they can change. 👍
