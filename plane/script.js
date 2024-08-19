@@ -155,5 +155,5 @@ const g = function () {
   };
 };
 
-g()
-f()
+g();
+f();
