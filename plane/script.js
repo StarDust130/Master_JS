@@ -101,5 +101,13 @@ const vistara = {
 
 const book = airIndia.book;
 
-//! this .call method call book() Fn. and 1st arrgument is this keyword value
+//! .call method call book() Fn. and 1st arrgument is this keyword value
 book.call(vistara, 19, 'Munna Thanos');
+
+//! Apply method same as .call but it not recieve arrgument but a array. ### NOT USE ANYMORE ###
+
+const flightData = [856, 'Jay shetty '];
+book.apply(vistara, flightData);
+
+//! MODERN ES6+ Way to do this.
+book.call(vistara, ...flightData);
