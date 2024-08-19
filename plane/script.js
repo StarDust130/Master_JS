@@ -68,10 +68,38 @@ const transformer = function (str, fn) {
 
 // greeterHey('Babu Bindas 😄');
 
-//! Function that Return Functions (Arrow Function)
+// //! Function that Return Functions (Arrow Function)
 
-const greet = greeting => name => console.log(`${greeting} ${name}`);
+// const greet = greeting => name => console.log(`${greeting} ${name}`);
 
-const greeterHey = greet('Hey');
+// const greeterHey = greet('Hey');
 
-greeterHey('Babu Bindas 😄');
+// greeterHey('Babu Bindas 😄');
+
+//! The call and apply Methods
+
+const airIndia = {
+  airline: 'AirIndia',
+  code: 'AI',
+  booking: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.code}${flightNum}`
+    );
+    this.booking.push({ flight: `${this.code}${flightNum}`, name });
+  },
+};
+
+airIndia.book(521581, 'Chandrashekhar');
+
+const vistara = {
+  airline: 'Vistara',
+  code: 'VI',
+  booking: [],
+  //   book,
+};
+
+const book = airIndia.book;
+
+//! this .call method call book() Fn. and 1st arrgument is this keyword value
+book.call(vistara, 19, 'Munna Thanos');
