@@ -9,7 +9,12 @@ const stardust = {
 };
 
 const checkIn = function (flightNum, passenger) {
-    
+  flightNum = 'AC1236';
+  passenger.name = 'Mr.' + passenger.name;
+
+  if (passenger.passport === 12356235) {
+    console.log('Have a Great Trip ✈️ 😊');
+  }
 };
 
 checkIn(flight, stardust);
