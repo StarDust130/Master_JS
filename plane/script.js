@@ -53,4 +53,17 @@ const transformer = function (str, fn) {
   console.log(`Transformer by: ${fn.name} Function`);
 };
 
-transformer('JavaScript is Best', upperFirstWord);
+// transformer('JavaScript is Best', upperFirstWord);
+// transformer('JavaScript is Best', oneWord);
+
+//! Function that Return Functions
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey');
+
+greeterHey('Babu Bindas 😄');
