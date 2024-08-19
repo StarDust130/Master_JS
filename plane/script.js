@@ -58,8 +58,20 @@ const transformer = function (str, fn) {
 
 //! Function that Return Functions
 
-const greet = function (greeting) {
-  return function (name) {
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+
+// const greeterHey = greet('Hey');
+
+// greeterHey('Babu Bindas 😄');
+
+//! Function that Return Functions (Arrow Function)
+
+const greet = greeting => {
+  return name => {
     console.log(`${greeting} ${name}`);
   };
 };
