@@ -120,5 +120,3 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // movements.forEach((movement , index ) => {
 //   movement > 0 && console.log(` ${index +1}: ${movement} deposited`);
 // });
-
-
