@@ -105,4 +105,20 @@ const arr2 = ['x', 'y', 'z'];
 
 // console.log(arr[0]);  -> We can do same thing with (at):
 
-console.log(arr.at(-1));
+// console.log(arr.at(-1));
+
+//! forEach
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// for (const element of movements) {
+//   if (element > 0) {
+//     console.log(element);
+//   }
+// }
+
+// movements.forEach((movement , index ) => {
+//   movement > 0 && console.log(` ${index +1}: ${movement} deposited`);
+// });
+
+
