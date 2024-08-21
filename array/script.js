@@ -71,7 +71,7 @@ const displayMovement = movements => {
           <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type} </div>
-          <div class="movements__value">${mov}</div>
+          <div class="movements__value">₹${mov}</div>
         </div>`;
 
     containerMovements.insertAdjacentHTML('afterbegin', html);
@@ -97,8 +97,30 @@ const createUsernames = accs => {
   });
 };
 
+//! Display Summary Total
+const calcDisplaySummary = movement => {
+  const incomes = movement
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+
+  labelSumIn.textContent = `₹${incomes}`;
+
+  const outIncome = movement
+    .filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumOut.textContent = `₹${Math.abs(outIncome)}`;
+
+  const interest = movement
+    .filter(mov => mov > 0)
+    .map(int => int * 0.012)
+    .filter(int => int >= 1)
+    .reduce((acc, int) => acc + int, 0);
+  labelSumInterest.textContent = `₹${interest}`;
+};
+
 createUsernames(accounts);
 calcDisplayBalance(account1.movements);
+calcDisplaySummary(account1.movements);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
