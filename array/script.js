@@ -116,8 +116,6 @@ GOOD LUCK 😀
 const dogsJulia = [3, 5, 2, 12, 7];
 const dogsJuliaReal = [...dogsJulia.slice(1, -2)];
 
-console.log(dogsJuliaReal);
-
 const dogsKate = [3, 5, 2, 12, 7];
 
 const checkDogs = (dogsData1, dogsData2) => {
@@ -140,4 +138,8 @@ const checkDogs = (dogsData1, dogsData2) => {
   console.log(`TOTAL Puppy Dog : ${puppy} `);
 };
 
-checkDogs(dogsJuliaReal, dogsKate);
+// checkDogs(dogsJuliaReal, dogsKate);
+
+// console.log(dogsKate.reduce((acc, cv) => acc + cv));
+
+dogsKate.map(dog => console.log(dog));
