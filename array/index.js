@@ -151,3 +151,11 @@ const calcAverageHumanAge = dogAges => {
 
 console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])); // Output: 44
 console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4])); // Output: 47.33
+
+//! WE can use all 3 together map , filter  and reduce.
+//! PIPELINE
+
+const totalDepositsINR = movements
+.filter((mov => mov > 0))
+.map(mov => mov * 80)
+.reduce((acc , mov) => acc + mov , 0)
