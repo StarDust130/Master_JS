@@ -80,19 +80,20 @@ const displayMovement = movements => {
 
 displayMovement(account1.movements);
 
-const user = 'Chandrashekhar Yadav';
-
-const createUsernames = user => {
-  const username = user
-    .toUpperCase()
-    .split(' ')
-    .map(name => name[0])
-    .join('');
-
-  return username;
+//! Create Username in accounts
+const createUsernames = accs => {
+  accs.forEach(acc => {
+    acc.username = acc.owner
+      .toUpperCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
 };
 
-console.log(createUsernames(user));
+createUsernames(accounts);
+
+console.log(accounts);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
