@@ -108,8 +108,17 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 const num = [1, 2, 3, 4, 5, 6, 7, 8];
 
-num.reduce((acc, cur, i, arr) => {
-  console.log(`Index: ${i}, Accumulator: ${acc}, Current Value: ${cur}`);
+// num.reduce((acc, cur, i, arr) => {
+//   console.log(`Index: ${i}, Accumulator: ${acc}, Current Value: ${cur}`);
 
-  return acc + cur; // Adds the current value to the accumulator
-}, 0); // Initial value of the accumulator is set to 0
+//   return acc + cur; // Adds the current value to the accumulator
+// }, 0); // Initial value of the accumulator is set to 0
+
+//! Maximum value in (reduce)
+
+const max = num.reduce((acc, mov) => {
+  // Compare accumulator and current value, return the larger one
+  return acc > mov ? acc : mov;
+}); // Start with the first element as the initial accumulator value
+
+console.log(max); // Outputs the maximum value in the array
