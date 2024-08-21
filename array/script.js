@@ -90,7 +90,7 @@ const calcDisplayBalance = movements => {
 const createUsernames = accs => {
   accs.forEach(acc => {
     acc.username = acc.owner
-      .toUpperCase()
+      .toLowerCase()
       .split(' ')
       .map(name => name[0])
       .join('');
@@ -118,9 +118,39 @@ const calcDisplaySummary = movement => {
   labelSumInterest.textContent = `₹${interest}`;
 };
 
+//! Event Handler
+let currentAccount;
+
+//? Login
+btnLogin.addEventListener('click', function (e) {
+  // Prevent form from submitting
+  e.preventDefault();
+
+  currentAccount = accounts.find(
+    acc => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
+
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    // Display UI and message
+    labelWelcome.textContent = `Welcome back, ${
+      currentAccount.owner.split(' ')[0]
+    }`;
+    containerApp.style.opacity = 100;
+
+    // Clear input fields
+    inputLoginUsername.value = inputLoginPin.value = '';
+    inputLoginPin.blur();
+
+    // Update UI
+    updateUI(currentAccount);
+  }
+});
+
 createUsernames(accounts);
 calcDisplayBalance(account1.movements);
 calcDisplaySummary(account1.movements);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES

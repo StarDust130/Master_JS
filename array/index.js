@@ -156,6 +156,14 @@ console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4])); // Output: 47.33
 //! PIPELINE
 
 const totalDepositsINR = movements
-.filter((mov => mov > 0))
-.map(mov => mov * 80)
-.reduce((acc , mov) => acc + mov , 0)
+  .filter(mov => mov > 0)
+  .map(mov => mov * 80)
+  .reduce((acc, mov) => acc + mov, 0)
+  //! .find same as filter but find 1 value after it condition meet return elemnt only not array
+
+const numbers = [1, 2, 3, 4, 5];
+
+// Find the first number greater than 3
+const result = numbers.find(number => number > 3);
+
+console.log(result); // Output: 4
