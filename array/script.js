@@ -80,6 +80,12 @@ const displayMovement = movements => {
 
 displayMovement(account1.movements);
 
+//! Cal  Balance Display
+const calcDisplayBalance = movements => {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `₹${balance}`;
+};
+
 //! Create Username in accounts
 const createUsernames = accs => {
   accs.forEach(acc => {
@@ -92,9 +98,7 @@ const createUsernames = accs => {
 };
 
 createUsernames(accounts);
-
-console.log(accounts);
-
+calcDisplayBalance(account1.movements);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
