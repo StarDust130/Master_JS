@@ -98,21 +98,21 @@ const createUsernames = accs => {
 };
 
 //! Display Summary Total
-const calcDisplaySummary = movement => {
-  const incomes = movement
+const calcDisplaySummary = accs => {
+  const incomes = accs
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
 
   labelSumIn.textContent = `₹${incomes}`;
 
-  const outIncome = movement
+  const outIncome = accs
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumOut.textContent = `₹${Math.abs(outIncome)}`;
 
-  const interest = movement
+  const interest = accs
     .filter(mov => mov > 0)
-    .map(int => int * 0.012)
+    .map(int => int * accs.interestRate)
     .filter(int => int >= 1)
     .reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = `₹${interest}`;
