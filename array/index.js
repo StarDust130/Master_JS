@@ -95,6 +95,21 @@ const checkDogs = (dogsData1, dogsData2) => {
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-console.log(movements.filter(num => num < 0));
+//! Filter -> filter out array data
+// console.log(movements.filter(num => num < 0));
+//! Sort -> sort it
+// console.log(movements.sort((a, b) => a - b));
 
-console.log(movements.sort((a, b) => a - b));
+// What is `reduce`?
+// - `acc` (Accumulator): Stores the ongoing sum or result
+// - `cur` (Current Value): The current element in the array
+// - `i` (Index): The index of the current element
+// - `arr` (Array): The entire array being processed
+
+const num = [1, 2, 3, 4, 5, 6, 7, 8];
+
+num.reduce((acc, cur, i, arr) => {
+  console.log(`Index: ${i}, Accumulator: ${acc}, Current Value: ${cur}`);
+
+  return acc + cur; // Adds the current value to the accumulator
+}, 0); // Initial value of the accumulator is set to 0
