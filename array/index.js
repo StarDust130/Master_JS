@@ -32,8 +32,6 @@ const arr2 = ['x', 'y', 'z'];
 
 //! forEach
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
 // for (const element of movements) {
 //   if (element > 0) {
 //     console.log(element);
@@ -43,7 +41,6 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // movements.forEach((movement , index ) => {
 //   movement > 0 && console.log(` ${index +1}: ${movement} deposited`);
 // });
-
 
 // Coding Challenge #1
 
@@ -94,4 +91,11 @@ const checkDogs = (dogsData1, dogsData2) => {
 
 // console.log(dogsKate.reduce((acc, cv) => acc + cv));
 
-dogsKate.map(dog => console.log(dog));
+// dogsKate.map(dog => console.log(dog));
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+console.log(movements.filter(num => num < 0));
+
+
+console.log(movements.sort((a, b) => a - b));
