@@ -158,8 +158,8 @@ console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4])); // Output: 47.33
 const totalDepositsINR = movements
   .filter(mov => mov > 0)
   .map(mov => mov * 80)
-  .reduce((acc, mov) => acc + mov, 0)
-  //! .find same as filter but find 1 value after it condition meet return elemnt only not array
+  .reduce((acc, mov) => acc + mov, 0);
+//! .find same as filter but find 1 value after it condition meet return elemnt only not array
 
 const numbers = [1, 2, 3, 4, 5];
 
@@ -170,29 +170,25 @@ console.log(result); // Output: 4
 
 //! findIndex Method same as find but it find index
 
-
 //! some:  Checks if at least one element in an array passes a given test (returns true).
-
 
 const hasEven = numbers.some(num => num % 2 === 0);
 console.log(hasEven); // true (because 2, 4 are even)
-
 
 //! every: Checks if all elements in an array pass a given test (returns true).
 
 const allPositive = numbers.every(num => num > 0);
 console.log(allPositive); // true (because all numbers are positive)
 
-
 //! flat Method:
 // Purpose: Flattens a nested array into a single-level array.
+//! Work on only 1 level of nesting. we use flat(2) -> so 2 level deep nested
 
 // const nestedArray = [1, [2, 3], [4, [5, 6]]];
 // const flatArray = nestedArray.flat();
 // console.log(flatArray); // [1, 2, 3, 4, [5, 6]]
 
 //? Note: By default, flat() only goes one level deep. You can specify the depth like flat(2).
-
 
 //! flatMap Method:
 // Purpose: First maps each element using a mapping function, then flattens the result into a new array.
@@ -202,3 +198,14 @@ console.log(allPositive); // true (because all numbers are positive)
 // console.log(result); // [1, 2, 2, 4, 3, 6]
 
 //? Super Simple: It's like doing map followed by flat(1) in a single step.
+
+//! Short a Array.
+
+// console.log(movements.sort((a, b) => a - b));
+
+//! this way we crete a array
+
+//! 100 random dice roll crete by code not manual 👍
+console.log(
+  Array.from({ length: 100 }, () => Math.floor(Math.random() * 6) + 1)
+);
