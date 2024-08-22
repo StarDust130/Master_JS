@@ -207,10 +207,14 @@ btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
 
   const amount = Number(inputLoanAmount.value);
+  const roundAmt = Math.floor(amount);
 
-  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+  if (
+    roundAmt.toFixed(1) > 0 &&
+    currentAccount.movements.some(mov => mov >= roundAmt * 0.1)
+  ) {
     // Add movement
-    currentAccount.movements.push(amount);
+    currentAccount.movements.push(roundAmt);
 
     // Update UI
     updateUI(currentAccount);
@@ -251,4 +255,8 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+console.log(Number.isNaN(100));
 
+const randomNum = (min, max) => Math.floor(Math.random() * (max - min) + 1);
+
+console.log(randomNum(20, 50));
