@@ -94,7 +94,7 @@ const displayMovements = function (movements, sort = false) {
         <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
-        <div class="movements__value">${mov}₹</div>
+        <div class="movements__value">₹${mov.toFixed(2)}</div>
       </div>
     `;
 
@@ -111,12 +111,12 @@ const calcDisplaySummary = function (acc) {
   const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumIn.textContent = `${incomes}₹`;
+  labelSumIn.textContent = `₹${incomes}`;
 
   const out = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumOut.textContent = `${Math.abs(out)}₹`;
+  labelSumOut.textContent = `₹${Math.abs(out).toFixed(2)}`;
 
   const interest = acc.movements
     .filter(mov => mov > 0)
@@ -126,7 +126,7 @@ const calcDisplaySummary = function (acc) {
       return int >= 1;
     })
     .reduce((acc, int) => acc + int, 0);
-  labelSumInterest.textContent = `${interest}₹`;
+  labelSumInterest.textContent = `₹${interest.toFixed(2)}`;
 };
 
 const createUsernames = function (accs) {
@@ -206,15 +206,15 @@ btnTransfer.addEventListener('click', function (e) {
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
 
-  const amount = Number(inputLoanAmount.value);
-  const roundAmt = Math.floor(amount);
+  const amount = Math.floor(inputLoanAmount.value);
+
 
   if (
-    roundAmt.toFixed(1) > 0 &&
-    currentAccount.movements.some(mov => mov >= roundAmt * 0.1)
+    amount.toFixed(1) > 0 &&
+    currentAccount.movements.some(mov => mov >= amount * 0.1)
   ) {
     // Add movement
-    currentAccount.movements.push(roundAmt);
+    currentAccount.movements.push(amount);
 
     // Update UI
     updateUI(currentAccount);
