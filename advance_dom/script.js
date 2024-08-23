@@ -10,7 +10,6 @@ const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 
 console.log(btnsOpenModal);
 
-
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
