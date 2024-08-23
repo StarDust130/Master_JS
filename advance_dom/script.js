@@ -32,3 +32,16 @@ document.addEventListener('keydown', e => {
     closeModal();
   }
 });
+
+//! Select DOM
+
+const button = document.getElementsByClassName('.btn');
+
+//! Create DOM
+document.createElement('div');
+
+//! Delete DOM
+button.remove();
+
+
+//! 191-195
