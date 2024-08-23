@@ -208,7 +208,6 @@ btnLoan.addEventListener('click', function (e) {
 
   const amount = Math.floor(inputLoanAmount.value);
 
-
   if (
     amount.toFixed(1) > 0 &&
     currentAccount.movements.some(mov => mov >= amount * 0.1)
@@ -260,3 +259,10 @@ console.log(Number.isNaN(100));
 const randomNum = (min, max) => Math.floor(Math.random() * (max - min) + 1);
 
 console.log(randomNum(20, 50));
+
+//! Numeric Separators: use to seperted number in js
+
+const num = 5_000_000_000;
+
+
+
