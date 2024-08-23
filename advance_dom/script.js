@@ -43,5 +43,9 @@ document.createElement('div');
 //! Delete DOM
 button.remove();
 
+//! 191-195.
 
-//! 191-195
+//! Styles, Attributes and Classes: This are inline style
+
+button.style.background = '#345545';
+button.style.width = '120%';
