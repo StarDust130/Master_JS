@@ -124,3 +124,45 @@ body {
   border: 3rem solid white;
   box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
 }
+
+.country {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background-color: #f4f4f4;
+}
+
+.country__img {
+  width: 200px;
+  border-radius: 10px;
+  margin-right: 2rem;
+}
+
+.country__data {
+  font-family: Arial, sans-serif;
+}
+
+.country__name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.country__region {
+  font-size: 1.2rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.country__row {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.country__row span {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
