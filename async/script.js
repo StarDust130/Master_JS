@@ -5,25 +5,26 @@ const countriesContainer = document.querySelector('.countries');
 
 ///////////////////////////////////////
 
-const req = new XMLHttpRequest();
+const getCountry = (country) => {
+  const req = new XMLHttpRequest();
 
-req.open('GET', 'https://restcountries.com/v3.1/name/india');
+  req.open('GET', `https://restcountries.com/v3.1/name/${country}`);
 
-req.send();
+  req.send();
 
-req.addEventListener('load', () => {
-  const [data] = JSON.parse(req.responseText);
-  console.log(data);
+  req.addEventListener('load', () => {
+    const [data] = JSON.parse(req.responseText);
+    console.log(data);
 
-  const html = `
+    const html = `
     <article class="country">
       <img class="country__img" src="${data.flags.png}" alt="${
-    data.name.common
-  } Flag" />
+      data.name.common
+    } Flag" />
       <div class="country__data">
         <h3 class="country__name">${data.name.common} (${
-    data.altSpellings[1]
-  })</h3>
+      data.altSpellings[1]
+    })</h3>
         <h4 class="country__region">${data.region} - ${data.subregion}</h4>
         <p class="country__row"><span>🏛️</span>Capital: ${data.capital[0]}</p>
         <p class="country__row"><span>🗺️</span>Area: ${(
@@ -51,6 +52,12 @@ req.addEventListener('load', () => {
     </article>
   `;
 
-  countriesContainer.insertAdjacentHTML('beforeend', html);
-  countriesContainer.style.opacity = 1;
-});
+    countriesContainer.insertAdjacentHTML('beforeend', html);
+    countriesContainer.style.opacity = 1;
+  });
+}
+
+getCountry("india")
+getCountry("usa")
+getCountry("japan")
+getCountry('');
