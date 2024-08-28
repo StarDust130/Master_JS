@@ -47,5 +47,12 @@ button.remove();
 
 //! Styles, Attributes and Classes: This are inline style
 
+//Styles
 button.style.background = '#345545';
 button.style.width = '120%';
+
+
+//Attributes
+const logo  = document.querySelector(".nav__logo")
+console.log(logo.src);
+
