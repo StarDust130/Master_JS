@@ -126,7 +126,6 @@ body {
 }
 
 .country {
-  display: flex;
   align-items: center;
   margin-bottom: 2rem;
   padding: 1.5rem;
