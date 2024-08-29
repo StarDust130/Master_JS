@@ -60,4 +60,4 @@ const getCountry = (country) => {
 getCountry("india")
 getCountry("usa")
 getCountry("japan")
-getCountry('');
+getCountry('russia');
