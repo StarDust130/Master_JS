@@ -5,7 +5,7 @@ const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
 
 ///////////////////////////////////////
-// 📝 Function to render country data on the page
+// // 📝 Function to render country data on the page
 const renderCountry = data => {
   // 🛠️ Create the HTML structure for a country card
   const html = `
@@ -99,4 +99,11 @@ const getCountryAndNeighbors = country => {
 };
 
 // 🚀 Fetch and display India and its neighboring country
+getCountryAndNeighbors('Zhōngguó');
 getCountryAndNeighbors('india');
+
+// const req = fetch(' `https://restcountries.com/v3.1/name/india');
+
+// console.log(req);
+
+
