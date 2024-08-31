@@ -215,3 +215,14 @@ let myPromise = new Promise((resolve, reject) => {
     reject('It failed!'); // This will happen if something goes wrong
   }
 });
+
+
+
+// Handling the promise with .then() and .catch()
+myPromise
+  .then(result => {
+    console.log(result); // This will run if resolve() is called
+  })
+  .catch(error => {
+    console.log(error); // This will run if reject() is called
+  });
