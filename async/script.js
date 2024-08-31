@@ -226,3 +226,16 @@ myPromise
   .catch(error => {
     console.log(error); // This will run if reject() is called
   });
+
+  // Define an async function to use await
+async function handlePromise() {
+  try {
+    let result = await myPromise; // Waits for the promise to resolve
+    console.log(result); // This will run if resolve() is called
+  } catch (error) {
+    console.log(error); // This will run if reject() is called
+  }
+}
+
+// Call the async function
+handlePromise();
