@@ -203,9 +203,7 @@ const getJSON = function (url, errorMsg = 'Something went wrong') {
 //   console.log(res);
 // })();
 
-
 //! Create a Promise
-
 let myPromise = new Promise((resolve, reject) => {
   let success = true; // Imagine we check something here
 
@@ -216,8 +214,7 @@ let myPromise = new Promise((resolve, reject) => {
   }
 });
 
-
-
+//! Consume a Promise by .then() and .catch()
 // Handling the promise with .then() and .catch()
 myPromise
   .then(result => {
@@ -227,7 +224,8 @@ myPromise
     console.log(error); // This will run if reject() is called
   });
 
-  // Define an async function to use await
+//! Consume a Promise by async/await
+// Define an async function to use await
 async function handlePromise() {
   try {
     let result = await myPromise; // Waits for the promise to resolve
