@@ -1,10 +1,10 @@
 'use strict';
 
-// 🌍 Select the button and container elements from the DOM
-const btn = document.querySelector('.btn-country');
-const countriesContainer = document.querySelector('.countries');
+// // 🌍 Select the button and container elements from the DOM
+// const btn = document.querySelector('.btn-country');
+// const countriesContainer = document.querySelector('.countries');
 
-///////////////////////////////////////
+// ///////////////////////////////////////
 // // 📝 Function to render country data on the page
 // const renderCountry = data => {
 //   // 🛠️ Create the HTML structure for a country card
@@ -57,63 +57,102 @@ const countriesContainer = document.querySelector('.countries');
 //     </article>
 //   `;
 
-//   // 🖇️ Insert the country card into the DOM
-//   countriesContainer.insertAdjacentHTML('beforeend', html);
-//   // 🌟 Make the container visible
-//   countriesContainer.style.opacity = 1;
+// //   // 🖇️ Insert the country card into the DOM
+// //   countriesContainer.insertAdjacentHTML('beforeend', html);
+// //   // 🌟 Make the container visible
+// //   countriesContainer.style.opacity = 1;
+// // };
+
+// // // 🗺️ Function to fetch country data and neighboring country data
+// // const getCountryAndNeighbors = country => {
+// //   const req = new XMLHttpRequest();
+
+// //   // 🌐 Prepare the API request for the country
+// //   req.open('GET', `https://restcountries.com/v3.1/name/${country}`);
+// //   req.send();
+
+// //   // 📨 Wait for the response from the API
+// //   req.addEventListener('load', () => {
+// //     const [data] = JSON.parse(req.responseText); // 🗄️ Parse the response data
+// //     renderCountry(data); // 🖼️ Render the country
+// //     console.log(data); // 🖥️ Log the data for debugging
+
+// //     // 🧭 Check if the country has any borders (neighboring countries)
+// //     if (data.borders && data.borders.length > 0) {
+// //       const neighbour = data.borders[0]; // 📍 Select the first neighboring country
+
+// //       //! AJAX call 2 for the neighboring country
+// //       const req2 = new XMLHttpRequest();
+
+// //       // 🌐 Prepare the API request for the neighboring country
+// //       req2.open('GET', `https://restcountries.com/v3.1/alpha/${neighbour}`);
+// //       req2.send();
+
+// //       // 📨 Wait for the response from the API
+// //       req2.addEventListener('load', function () {
+// //         const [data2] = JSON.parse(req2.responseText); // 🗄️ Parse the response data
+// //         renderCountry(data2); // 🖼️ Render the neighboring country
+// //         console.log(data2); // 🖥️ Log the data for debugging
+// //       });
+// //     }
+// //   });
+// // };
+
+// // // 🚀 Fetch and display India and its neighboring country
+// // getCountryAndNeighbors('Zhōngguó');
+// // getCountryAndNeighbors('india');
+
+// // const req = fetch(' `https://restcountries.com/v3.1/name/india');
+
+// // console.log(req);
+
+// const getCountryData = country => {
+//   fetch(`https://restcountries.com/v3.1/name/${country}`)
+//     .then(res => {
+//       console.log(res);
+
+//       if (!res.ok) {
+//         throw new Error(`Not found ${res.status} country 🤣`);
+//       }
+
+//       return res.json();
+//     })
+//     .then(data => {
+//       renderCountry(data[0]);
+//       const neighbors = data[0].borders[0];
+
+//       if (!neighbors) return;
+//     })
+//     .catch(err => alert('Error:', err));
 // };
 
-// // 🗺️ Function to fetch country data and neighboring country data
-// const getCountryAndNeighbors = country => {
-//   const req = new XMLHttpRequest();
+// getCountryData('indiaaaa');
 
-//   // 🌐 Prepare the API request for the country
-//   req.open('GET', `https://restcountries.com/v3.1/name/${country}`);
-//   req.send();
+// ! We use .then and .catch to chain the async js it is better from callback.
 
-//   // 📨 Wait for the response from the API
-//   req.addEventListener('load', () => {
-//     const [data] = JSON.parse(req.responseText); // 🗄️ Parse the response data
-//     renderCountry(data); // 🖼️ Render the country
-//     console.log(data); // 🖥️ Log the data for debugging
+//! use also use throw new Error to manually Error throw
 
-//     // 🧭 Check if the country has any borders (neighboring countries)
-//     if (data.borders && data.borders.length > 0) {
-//       const neighbour = data.borders[0]; // 📍 Select the first neighboring country
+//! async/await
 
-//       //! AJAX call 2 for the neighboring country
-//       const req2 = new XMLHttpRequest();
+// const whereAmI = async country => {
+//   // It wil  stop code at this time until promise is  fulfilled(until data is fetch in this case)
+//   const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
 
-//       // 🌐 Prepare the API request for the neighboring country
-//       req2.open('GET', `https://restcountries.com/v3.1/alpha/${neighbour}`);
-//       req2.send();
+//   console.log(res);
 
-//       // 📨 Wait for the response from the API
-//       req2.addEventListener('load', function () {
-//         const [data2] = JSON.parse(req2.responseText); // 🗄️ Parse the response data
-//         renderCountry(data2); // 🖼️ Render the neighboring country
-//         console.log(data2); // 🖥️ Log the data for debugging
-//       });
-//     }
-//   });
+//   const data = await res.json();
+
+//   console.log(data);
 // };
+// whereAmI('india');
+// console.log('FIRST');
 
-// // 🚀 Fetch and display India and its neighboring country
-// getCountryAndNeighbors('Zhōngguó');
-// getCountryAndNeighbors('india');
+//! try-catch in JS
 
-// const req = fetch(' `https://restcountries.com/v3.1/name/india');
-
-// console.log(req);
-
-const getCountryData = country => {
-  fetch(`https://restcountries.com/v3.1/name/${country}`)
-    .then(res => {
-      return res.json();
-    })
-    .then(data => {
-      return console.log(data);
-    });
-};
-
-getCountryData("india")
+try {
+  const x = 1;
+  x = 2;
+  console.log(x);
+} catch (error) {
+  console.error(error.message);
+}
